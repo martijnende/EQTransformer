@@ -198,11 +198,11 @@ def predictor(input_dir=None,
         
     if args['gpuid']:     
         os.environ['CUDA_VISIBLE_DEVICES'] = '{}'.format(args['gpuid'])
-        tf.Session(config=tf.ConfigProto(log_device_placement=True))
-        config = tf.ConfigProto()
+        tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(log_device_placement=True))
+        config = tf.compat.v1.ConfigProto()
         config.gpu_options.allow_growth = True
         config.gpu_options.per_process_gpu_memory_fraction = float(args['gpu_limit']) 
-        K.tensorflow_backend.set_session(tf.Session(config=config))          
+        K.tensorflow_backend.set_session(tf.compat.v1.Session(config=config))          
                                   
     class DummyFile(object):
         file = None

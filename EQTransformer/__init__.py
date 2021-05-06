@@ -4,15 +4,15 @@ import importlib
 import sys
 import warnings
 
-from EQTransformer.core.trainer import trainer 
-from EQTransformer.core.tester import tester
-from EQTransformer.core.predictor import predictor
-from EQTransformer.core.mseed_predictor import mseed_predictor
-from EQTransformer.core.EqT_utils import *
-from EQTransformer.utils.associator import run_associator
-from EQTransformer.utils.downloader import downloadMseeds, makeStationList, downloadSacs
-from EQTransformer.utils.hdf5_maker import preprocessor
-from EQTransformer.utils.plot import plot_detections, plot_data_chart
+from .core.trainer import trainer 
+from .core.tester import tester
+from .core.predictor import predictor
+from .core.mseed_predictor import mseed_predictor
+from .core.EqT_utils import *
+from .utils.associator import run_associator
+from .utils.downloader import downloadMseeds, makeStationList, downloadSacs
+from .utils.hdf5_maker import preprocessor
+from .utils.plot import plot_detections, plot_data_chart
 
 __all__ = ['core', 'utils', 'tests']
 __version__ = '0.0.1'

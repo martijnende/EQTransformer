@@ -17,7 +17,7 @@ from keras import backend as K
 from keras.layers import add, Activation, LSTM, Conv1D
 from keras.layers import MaxPooling1D, UpSampling1D, Cropping1D, SpatialDropout1D, Bidirectional, BatchNormalization 
 from keras.models import Model
-from keras.utils import multi_gpu_model
+# from keras.utils import multi_gpu_model
 from keras.optimizers import Adam
 from obspy.signal.trigger import trigger_onset
 import matplotlib
@@ -2839,7 +2839,8 @@ class cred2():
 
         if self.multi_gpu == True:
             parallel_model = Model(inputs=inp, outputs=[d, P, S])
-            model = multi_gpu_model(parallel_model, gpus=self.gpu_number)
+            model = None
+#             model = multi_gpu_model(parallel_model, gpus=self.gpu_number)
         else:
             model = Model(inputs=inp, outputs=[d, P, S])
 
